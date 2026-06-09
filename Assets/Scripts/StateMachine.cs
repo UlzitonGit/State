@@ -32,8 +32,8 @@ public class StateMachine
             
         if (currentState != null && currentState.GetType() == stateType)
             return;
-            
-        currentState.Exit();
+
+        if (currentState != null) currentState.Exit();
         currentState = newState;
         currentState.Enter();
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RedZoneState : PlayerState
 {
+    private GameObject redZonePrefab;
     private GameObject redZoneObject;
     private bool isActive = false;
     
@@ -13,8 +14,8 @@ public class RedZoneState : PlayerState
     
     private void CreateRedZone()
     {
-        redZoneObject = Resources.Load<GameObject>("RedZoneState");
-        
+        redZonePrefab = Resources.Load<GameObject>("RedZoneState");
+        redZoneObject = Object.Instantiate(redZonePrefab, player.transform);
         redZoneObject.SetActive(false);
     }
     

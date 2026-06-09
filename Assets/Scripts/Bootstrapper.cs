@@ -27,6 +27,7 @@ public class Bootstrapper : MonoBehaviour
         hud = playerObject.GetComponentInChildren<HUD>();
         inputHandler = playerObject.GetComponent<PlayerInputHandler>();
         playerMovement = playerObject.GetComponent<PlayerMovement>();
+        
         playerMovement.Initialize(inputHandler);
         
         playerStateMachine = StateInitializer.InitializePlayerStates(
